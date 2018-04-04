@@ -43,7 +43,7 @@ class TagListView(ListView):
         context = super().get_context_data(**kwargs)
         tag = self.kwargs['tag']
         context.update({
-            'tag': tag,
+            'tag': Tag.objects.get(name=tag),
             'blog_posts': Post.objects.filter(tags__name=tag)
         })
         return context

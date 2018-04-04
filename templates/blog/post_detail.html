@@ -1,8 +1,6 @@
 <h1>{{ post.title }}</h1>
 <h3>{{ post.author }} - {{ post.created_date|date }}</h3>
-<p>
-  {{ post.text }}
-</p>
+<p>{{ post.text }}</p>
 {% for tag in tags %}
     <li><a href="{% url 'blog:tags' tag %}">{{ tag }}</a></li>
 {% empty %}
