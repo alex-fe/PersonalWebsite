@@ -14,7 +14,7 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return ' - '.join([self.published_date, self.title])
+        return self.title
 
 
 class Tag(models.Model):
