@@ -1,0 +1,10 @@
+<h1>{{ tag }}</h1>
+<h3>{{ tag.creation_date|date }}</h3>
+<p>{{ tag.detail }}</p>
+<ul>
+{% for post in blog_posts %}
+    <li><a href="{% url 'blog:detail' post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
+{% empty %}
+    <li>No posts yet.</li>
+{% endfor %}
+</ul>
