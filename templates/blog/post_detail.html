@@ -1,10 +1,11 @@
-<h1>{{ post.published_date|date }} - {{ post.title }}</h1>
-<h3>{{ post.author }}</h3>
+<h1>{{ post.title }}</h1>
+<h3>{{ post.author }} - {{ post.created_date|date }}</h3>
 <p>
   {{ post.text }}
 </p>
 {% for tag in tags %}
-    <li>{{ tag }}</li>
+    <li><a href="{% url 'blog:tags' tag %}">{{ tag }}</a></li>
 {% empty %}
     <li>No tags.</li>
 {% endfor %}
+{{ post.published_date|date }}
