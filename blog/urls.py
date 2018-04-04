@@ -2,9 +2,10 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 
-from .views import PostListView
+from .views import PostDetailView, PostListView
 
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='posts')
+    path('', PostListView.as_view(), name='posts'),
+    path('<int:pk>/', PostDetailView.as_view(), name='detail')
 ]
