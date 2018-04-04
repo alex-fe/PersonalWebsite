@@ -25,7 +25,10 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        context['pk'] = self.kwargs['pk']
-        # context['tags'] = Post.tags
+        pk = self.kwargs['pk']
+        context.update({
+            'now': timezone.now(),
+            'pk': pk,
+            'tags': Post.objects.get(pk=pk).tags.order_by('-creation_date')
+        })
         return context

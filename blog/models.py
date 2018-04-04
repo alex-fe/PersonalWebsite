@@ -1,12 +1,28 @@
 from django.db import models
 from django.utils import timezone
 
+
+class Tag(models.Model):
+    """
+    name: Name of the tag
+    detail: Notes about the tag (optional)
+    creation_date: Date when 1st instance of tag was created
+    """
+    name = models.CharField(max_length=50)
+    detail = models.TextField(blank=True)
+    creation_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    tags = models.ManyToManyField(Tag)
 
 
     def publish(self):
@@ -15,11 +31,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50)
-    posts = models.ManyToManyField(Post)
-
-    def __str__(self):
-        return self.name
