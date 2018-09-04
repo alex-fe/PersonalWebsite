@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from main.models import Catagory
+
 
 class Tag(models.Model):
     """
@@ -23,6 +25,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     tags = models.ManyToManyField(Tag)
+    catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, null=True)
 
     def publish(self):
         self.published_date = timezone.now()

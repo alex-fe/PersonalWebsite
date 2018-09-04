@@ -13,5 +13,5 @@ urlpatterns = [
         'about-me/',
         include(('aboutme.urls', 'aboutme'), namespace='about_me')
     ),
-    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
+    path('', include(('blog.urls', 'blog'), namespace='blog')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

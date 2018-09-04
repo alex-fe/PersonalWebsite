@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Posts{% endblock %}
+{% block title %}{{catagory}}{% endblock %}
 
 {% block content %}
-  <h1>Posts</h1>
+  <h1>{{catagory}}</h1>
   <ul>
-  {% for post in blog_posts %}
+  {% for post in posts %}
       <li><a href="{% url 'blog:detail' post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
   {% empty %}
       <li>No posts yet.</li>

@@ -4,6 +4,7 @@ from django.db import models
 
 
 def get_image_path(instance, filename):
+    # TODO: fix image structure
     return os.path.join('splash', instance.photo_dir, filename)
 
 
