@@ -4,8 +4,7 @@ from django.db import models
 
 
 def get_image_path(instance, filename):
-    # TODO: fix image structure
-    return os.path.join(instance.photo_dir, 'splash', filename)
+    return os.path.join(instance.photo_path, 'splash', filename)
 
 
 class Catagory(models.Model):
@@ -22,5 +21,5 @@ class Catagory(models.Model):
         return self.name
 
     @property
-    def photo_dir(self):
-        return '{}_{}'.format(self.id, self.name)
+    def photo_path(self):
+        return '{}_{}'.format(self.pk, self.name)
