@@ -13,7 +13,7 @@
   </div>
   <div class="flex-grid">
   {% for catagory in catagories %}
-    <div class="col">
+    <div>
       <a href="{% url 'blog:posts' catagory.name|slugify %}">
         <img src={{catagory.image.url}} alt={{catagory.description}}>
       </a>

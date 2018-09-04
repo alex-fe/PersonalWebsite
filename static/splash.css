@@ -1,19 +1,26 @@
 /*Photo column*/
 .flex-grid {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  justify-content: space-around;
+  width: 80%;
+  display: inline-block;
+  height: 80%;
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  top: 50%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
 }
 
-.flex-grid .col {
-  flex: 50%;
-  padding: 0 4px;
+.flex-grid div {
+  display: inline-block;
+  margin-left: 2%;
+  margin-top: 2%;
+  box-sizing: border-box;
 }
 
 .flex-grid img {
-  margin-top: 8px;
-  vertical-align: middle;
   max-width: 200px;
   max-height: 200px;
 }
