@@ -1,0 +1,8 @@
+.flex-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
+  width: 32%;
+}

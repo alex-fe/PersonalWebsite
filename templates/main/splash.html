@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'splash.css' %}">
+{% endblock %}
+{% block title %}ALEX{% endblock %}
+
+
+
+{% block content %}
+  <div class="flex-grid">
+  {% for catagory in catagories %}
+    <div class="col">
+      <a>{{catagory.name}}</a> 
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

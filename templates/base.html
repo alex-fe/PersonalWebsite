@@ -6,15 +6,9 @@
       <title>{% block title %}{% endblock %} - My Site</title>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" type="text/css" href="{% static 'navigation.css' %}">
-    </head
+      {% block head %}{% endblock %}
+    </head>
     <body>
-      <nav>
-        <ul class='nav_bar' >
-          <li><a href={ url 'about_me' }>About</a></li>
-          <li><a href={ url 'blog:posts' }>Blog</a></li>
-        </ul>
-      </nav>
       {% block content %}{% endblock %}
     </body>
 </html>
