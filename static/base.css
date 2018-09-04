@@ -2,3 +2,11 @@
 h1 {
   text-align: center;
 }
+
+/*Footer*/
+.buttons {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

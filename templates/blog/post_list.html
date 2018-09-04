@@ -4,6 +4,7 @@
 
 {% block content %}
   <h1>{{catagory}}</h1>
+  <a href="javascript:history.back()">Go Back</a>
   <ul>
   {% for post in posts %}
       <li><a href="{% url 'blog:detail' catagory|slugify post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>

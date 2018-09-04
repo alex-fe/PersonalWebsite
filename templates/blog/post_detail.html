@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'splash.css' %}">
+{% endblock %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
