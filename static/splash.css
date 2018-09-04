@@ -2,11 +2,13 @@
 h1 {
   text-align: center;
 }
+
 /*Photo column*/
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  justify-content: space-around;
 }
 
 .flex-grid .col {
@@ -17,6 +19,8 @@ h1 {
 .flex-grid img {
   margin-top: 8px;
   vertical-align: middle;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 

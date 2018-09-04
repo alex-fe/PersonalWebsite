@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load staticfiles%}
+{% load static %}
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'splash.css' %}">
@@ -14,7 +14,10 @@
   <div class="flex-grid">
   {% for catagory in catagories %}
     <div class="col">
-      <img alt={{catagory.description}}/>
+      <img
+      src={{catagory.image.url}}
+      alt={{catagory.description}}/
+      href={% url %}>
     </div>
   {% endfor %}
 </div>

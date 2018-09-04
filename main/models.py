@@ -10,6 +10,8 @@ def get_image_path(instance, filename):
 class Catagory(models.Model):
     """
     name: Name of the Catagory
+    detail: Description of the Catagory
+    image: Cover photo
     """
     name = models.CharField(max_length=50)
     detail = models.TextField(blank=True)
