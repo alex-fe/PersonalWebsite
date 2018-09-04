@@ -1,6 +1,23 @@
-/*Title*/
+a:hover {
+  text-decoration:none;
+}
+
 h1 {
   text-align: center;
+}
+
+li {
+  list-style-type:none
+}
+
+#return_container{
+  position: relative;
+}
+
+#return_container a {
+  position: absolute;
+  top: -40px;
+  left: 0px;
 }
 
 /*Footer*/

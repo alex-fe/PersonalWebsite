@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'post_list.css' %}">
+{% endblock %}
 {% block title %}{{catagory}}{% endblock %}
 
 {% block content %}
   <h1>{{catagory}}</h1>
-  <a href="javascript:history.back()">Go Back</a>
+  <div id="return_container">
+    <a  href="javascript:history.back()">Main</a>
+  </div>
   <ul>
   {% for post in posts %}
-      <li><a href="{% url 'blog:detail' catagory|slugify post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
+      <li>
+        <a href="{% url 'blog:detail' catagory|slugify post.pk %}">
+          <h3>{{ post.title }}</h3>
+          <h4>{{ post.created_date|date }}</h4>
+        </a>
+      </li>
   {% empty %}
       <li>No posts yet.</li>
   {% endfor %}
