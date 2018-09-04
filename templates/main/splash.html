@@ -14,8 +14,9 @@
   <div class="flex-grid">
   {% for catagory in catagories %}
     <div class="col">
-      <a href="{% url 'blog:posts' catagory.name|slugify %}"></a>
-      <img src={{catagory.image.url}} alt={{catagory.description}} href="{% url 'blog:posts' catagory.name|slugify %}">
+      <a href="{% url 'blog:posts' catagory.name|slugify %}">
+        <img src={{catagory.image.url}} alt={{catagory.description}}>
+      </a>
     </div>
   {% endfor %}
 </div>

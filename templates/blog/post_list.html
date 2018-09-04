@@ -6,7 +6,7 @@
   <h1>{{catagory}}</h1>
   <ul>
   {% for post in posts %}
-      <li><a href="{% url 'blog:detail' post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
+      <li><a href="{% url 'blog:detail' catagory|slugify post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
   {% empty %}
       <li>No posts yet.</li>
   {% endfor %}
