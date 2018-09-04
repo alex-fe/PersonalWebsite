@@ -1,8 +1,14 @@
-<h1>Posts</h1>
-<ul>
-{% for post in blog_posts %}
-    <li><a href="{% url 'blog:detail' post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
-{% empty %}
-    <li>No posts yet.</li>
-{% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+  <h1>Posts</h1>
+  <ul>
+  {% for post in blog_posts %}
+      <li><a href="{% url 'blog:detail' post.pk %}">{{ post.title }} - {{ post.created_date|date }}</a></li>
+  {% empty %}
+      <li>No posts yet.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
