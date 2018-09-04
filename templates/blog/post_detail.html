@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'splash.css' %}">
@@ -10,7 +11,7 @@
   <h3>{{ post.author }} - {{ post.created_date|date }}</h3>
   <p>{{ post.text }}</p>
   {% for tag in tags %}
-      <li><a href="{% url 'blog:tags' category|slugify tag %}">{{ tag }}</a></li>
+      <li><a href="{% url 'tags' tag|lower|slugify %}">{{ tag }}</a></li>
   {% empty %}
       <li>No tags.</li>
   {% endfor %}

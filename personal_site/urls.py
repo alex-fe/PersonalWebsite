@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 
+from blog.views import TagListView
 from main.views import splash_page
 
 urlpatterns = [
@@ -13,5 +14,6 @@ urlpatterns = [
         'about-me/',
         include(('aboutme.urls', 'aboutme'), namespace='about_me')
     ),
-    path('<slug:catagory>/', include(('blog.urls', 'blog'), namespace='blog')),
+    path('<slug:tag>/', TagListView.as_view(), name='tags'),
+    path('<slug:catagory>/', include(('blog.urls', 'blog'), namespace='blog'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
