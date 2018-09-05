@@ -9,7 +9,7 @@
 {% block content %}
   <h1>{{ post.title }}</h1>
   <h3>{{ post.author }} - {{ post.created_date|date }}</h3>
-  <p>{{ post.text }}</p>
+  <p>{{ post.body_html }}</p>
   {% for tag in tags %}
       <li><a href="{% url 'tags' tag|lower|slugify %}">{{ tag }}</a></li>
   {% empty %}

@@ -4,7 +4,7 @@ from django.db import models
 
 
 def get_image_path(instance, filename):
-    return os.path.join(instance.photo_path, 'splash', filename)
+    return os.path.join(instance.name, 'splash', filename)
 
 
 class Catagory(models.Model):
@@ -19,7 +19,3 @@ class Catagory(models.Model):
 
     def __str__(self):
         return self.name
-
-    @property
-    def photo_path(self):
-        return '{}_{}'.format(self.pk, self.name)
