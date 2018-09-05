@@ -12,11 +12,12 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        context['catagory'] = self.kwargs['catagory'].upper()
-        context['posts'] = Post.objects.filter(
-            catagory__name__iexact=self.kwargs['catagory']
-        ).order_by('-created_date')
+        catagory = self.kwargs['catagory']
+        context.update({
+            'now': timezone.now(),
+            'catagory': catagory,
+            'posts': Post.objects.filter(catagory__name__iexact=catagory)
+        })
         return context
 
 
@@ -28,12 +29,11 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
-        post = Post.objects.get(pk=pk)
         context.update({
             'now': timezone.now(),
             'pk': pk,
-            'category': self.kwargs['catagory'],
-            'tags': post.tags.order_by('-creation_date')
+            'catagory': self.kwargs['catagory'],
+            'tags': Post.objects.get(pk=pk).tags.all()
         })
         return context
 
