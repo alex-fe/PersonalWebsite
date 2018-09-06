@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load tags %}
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'post_detail.css' %}">
@@ -8,10 +9,14 @@
 
 {% block content %}
   <h1>{{ post.title }}</h1>
+  <div>
+    <a href="{% url 'splash' %}">Main</a>
+    <a href="{% url 'blog:posts' catagory %}">{{ catagory|deslugify|title }}</a>
+  </div>
   <h3>{{ post.created_date|date }}</h3>
   <p>{{ post.body_html }}</p>
   {% for tag in tags %}
-      <li><a href="{% url 'tags' tag|lower|slugify %}">{{ tag }}</a></li>
+      <li><a href="{% url 'tags' tag|slugify %}">{{ tag }}</a></li>
   {% empty %}
       <li>No tags.</li>
   {% endfor %}

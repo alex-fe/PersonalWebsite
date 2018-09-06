@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load tags %}
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'post_list.css' %}">
 {% endblock %}
-{% block title %}{{catagory}}{% endblock %}
+{% block title %}{{ catagory|upper|deslugify }}{% endblock %}
 
 {% block content %}
-  <h1>{{catagory}}</h1>
-  <div id="return_container">
-    <a  href="javascript:history.back()">Main</a>
+  <h1>{{ catagory|upper|deslugify }}</h1>
+  <div>
+    <a href="{% url 'splash' %}">Main</a>
   </div>
   <ul>
   {% for post in posts %}

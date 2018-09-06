@@ -5,7 +5,10 @@
 
 {% block content %}
   <h1>{{ tag }}</h1>
-  <h3>{{ tag.creation_date|date }}</h3>
+  <div>
+    <a href="{% url 'splash' %}">Main</a>
+  </div>
+  <h3>Created: {{ tag.creation_date|date }}</h3>
   <p>{{ tag.detail }}</p>
   <ul>
   {% for post in posts %}
