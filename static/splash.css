@@ -3,31 +3,34 @@
   margin-right: auto;
   margin-left: auto;
   padding-top: 0px;
+  display: block;
 }
 
 .project-list img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 1%;
+  padding: 10px;
 }
 
-.project-list-item{
+.project-list-item {
   display: inline-block;
   list-style: none;
 }
 
 .project-caption {
-    position: absolute;
-    text-align: center;
-    width: 100px;
-    margin-top: -60px;
-    color: white;
-    font-weight: 200;
-    letter-spacing: 1.2px;
-    font-size: 12px;
-    z-index: 100;
-    opacity: 0.0;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  margin-top: -100px;
+  margin-left: 50px;
+  color: white;
+  opacity: 0.0;
+  z-index: 100;
 }
 
-.center-text{
-  text-align: center;
+.project-shader {
+  position: absolute;
+  display: inline-block;
+  border-radius: 1%;
 }

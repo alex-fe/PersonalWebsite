@@ -18,7 +18,7 @@
       {% for catagory in catagories %}
         <a href="{% url 'blog:posts' catagory.name|slugify %}">
           <li class="project-list-item center-text">
-            <img src={{catagory.image.url}} alt={{catagory.description}}>
+            <img class="project-img" src={{catagory.image.url}} alt={{catagory.description}}>
             <h5 class="project-caption">{{ catagory.name }}</h5>
             <div class="project-shader"></div>
           </li>
