@@ -3,6 +3,8 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'splash.css' %}">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'splash.js' %}"></script>
 {% endblock %}
 {% block title %}ALEX{% endblock %}
 
@@ -11,13 +13,17 @@
   <div>
     <h1>ALEX FELDMAN</h1>
   </div>
-  <div class="flex-grid">
-  {% for catagory in catagories %}
-    <div>
-      <a href="{% url 'blog:posts' catagory.name|slugify %}">
-        <img src={{catagory.image.url}} alt={{catagory.description}}>
-      </a>
-    </div>
-  {% endfor %}
-</div>
+  <div class="project-list">
+    <ul>
+      {% for catagory in catagories %}
+        <a href="{% url 'blog:posts' catagory.name|slugify %}">
+          <li class="project-list-item center-text">
+            <img src={{catagory.image.url}} alt={{catagory.description}}>
+            <h5 class="project-caption">{{ catagory.name }}</h5>
+            <div class="project-shader"></div>
+          </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

@@ -1,37 +1,33 @@
-/*Photo column*/
-.flex-grid {
-  width: 80%;
-  display: inline-block;
-  height: 80%;
-  position: absolute;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
-  top: 50%;
-  transform: translateY(-50%);
-  box-sizing: border-box;
+.project-list {
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 0px;
 }
 
-.flex-grid div {
-  display: inline-block;
-  margin-left: 2%;
-  margin-top: 2%;
-  box-sizing: border-box;
-}
-
-.flex-grid img {
+.project-list img {
   max-width: 200px;
   max-height: 200px;
 }
 
+.project-list-item{
+  display: inline-block;
+  list-style: none;
+}
 
-/* Responsive layout
- makes the two columns stack on top of each other instead of next to each other
- */
-@media screen and (max-width: 600px) {
-  .flex-grid .col {
-    flex: 100%;
-    max-width: 100%;
-  }
+.project-caption {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    margin-top: -60px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 1.2px;
+    font-size: 12px;
+    z-index: 100;
+    opacity: 0.0;
+}
+
+.center-text{
+  text-align: center;
 }

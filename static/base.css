@@ -1,10 +1,17 @@
 body {
   overflow: auto;
   padding: 0 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
 }
 
-a:hover {
+a {
   text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
 }
 
 h1 {
@@ -15,19 +22,11 @@ li {
   list-style-type:none
 }
 
-#return_container{
-  position: relative;
-}
-
-#return_container a {
-  position: absolute;
-  top: -40px;
-  left: 0px;
-}
-
 /*Footer*/
 .buttons {
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  background-color: white;
+}
