@@ -1,4 +1,13 @@
-img{
+img {
   max-width: 100%;
   padding: 25px 50px 75px;
+}
+
+.tags-list li {
+  display:inline;
+  padding: 2px;
+}
+
+.tags-list li a:hover{
+  text-decoration: underline;
 }

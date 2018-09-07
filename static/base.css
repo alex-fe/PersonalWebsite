@@ -13,19 +13,19 @@
 body {
   overflow: auto;
   padding: 0 10px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
 a {
   color: black;
   text-decoration:none;
-}
-a:hover {
-  text-decoration:underline;
 }
 
 h1 {
@@ -36,9 +36,13 @@ li {
   list-style-type:none
 }
 
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
 /*Footer*/
 footer {
-  margin: 0 auto;
+  max-width: 450px;
 }
 
 .buttons-container {
@@ -46,14 +50,15 @@ footer {
   padding: 0;
   bottom: 0;
   margin-top:40px;
-  width: 100%;
   background-color: white;
-  overflow: hidden;
+  margin-left: 135px;
 }
 
-.buttons {
-  width: 10px;
-  height: 10px;
-  object-fit: fill;
-  display: inline-block;
+.buttons-container li {
+  display:inline;
+  padding: 2px;
+}
+
+.buttons-container a:hover {
+  color: red;
 }
