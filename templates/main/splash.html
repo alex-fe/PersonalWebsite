@@ -11,13 +11,17 @@
   <div>
     <h1>ALEX FELDMAN</h1>
   </div>
-  <div class="flex-grid">
-  {% for catagory in catagories %}
-    <div>
-      <a href="{% url 'blog:posts' catagory.name|slugify %}">
-        <img src={{catagory.image.url}} alt={{catagory.description}}>
-      </a>
-    </div>
-  {% endfor %}
-</div>
+  <div class="project-list">
+    <ul>
+      {% for catagory in catagories %}
+        <a href="{% url 'blog:posts' catagory.name|slugify %}">
+          <li class="project-list-item center-text">
+            <div class="project-img-container">
+              <img class="project-img" src={{catagory.image.url}} alt={{catagory.name}}>
+            </div>
+          </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

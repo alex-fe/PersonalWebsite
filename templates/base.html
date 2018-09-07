@@ -1,23 +1,26 @@
 {% load static %}
 
 <html>
-    <head>
-      <meta charset="utf-8"/>
-      <title>{% block title %}{% endblock %} - My Site</title>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="{% static 'base.css' %}">
-      {% block head %}{% endblock %}
-    </head>
-    <body>
-      {% block content %}{% endblock %}
-    </body>
-    <footer>
-      <div class="buttons">
-        <a href="https://www.instagram.com/feldman_alex/">Insta</a>
-        <a href="https://github.com/alex-fe">Github</a>
-        <a href="https://www.linkedin.com/in/af3ld/">LinkedIn</a>
-        <a href="mailto:alexfeldman93@gmail.com">Contact</a>
-      </div>
-    </footer>
+  <head>
+    <meta charset="utf-8"/>
+    <title class="center-text">{% block title %}{% endblock %} - My Site</title>
+
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <script type="text/javascript">console.log("Nice to meet you");</script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+  <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="buttons-container">
+      <ul class="buttons-list">
+        <li><a class="fa fa-instagram" href="https://www.instagram.com/feldman_alex/"></a></li>
+        <li><a class="fa fa-github" href="https://github.com/alex-fe"></a></li>
+        <li><a class="fa fa-linkedin" href="https://www.linkedin.com/in/af3ld/"></a></li>
+        <li><a class="fa fa-envelope-o" href="mailto:alexfeldman93@gmail.com"></a></li>
+      </ul>
+    </div>
+  </footer>
 </html>
