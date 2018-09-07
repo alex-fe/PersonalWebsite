@@ -16,8 +16,9 @@
   {% for post in posts %}
       <li>
         <a href="{% url 'blog:detail' catagory|slugify post.pk %}">
-          <h3>{{ post.title }}</h3>
-          <h4>{{ post.created_date|date }}</h4>
+          <h3 class="center-text">{{ post.title }}</h3>
+          <h4 class="center-text">{{ post.created_date|date }}</h4>
+          <p>{{ post.text|blurb }}</p>
         </a>
       </li>
   {% empty %}
