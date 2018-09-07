@@ -4,21 +4,6 @@
   margin-left: auto;
   padding-top: 0px;
   display: block;
-  vertical-align: middle;
-}
-
-.project-img-container {
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  margin: 10px;
-}
-
-.project-list img {
-  border-radius: 1%;
-  padding: 10px;
-  width: auto;
-  object-fit: cover;
 }
 
 .project-list-item {
@@ -26,18 +11,17 @@
   list-style: none;
 }
 
-.project-caption {
-  position: absolute;
-  width: 150px;
-  margin-top: -75px;
-  margin-left: 75px;
-  color: white;
-  opacity: 0.0;
-}
-
-.project-shader {
-  position: absolute;
+.project-img-container {
   width: 150px;
   height: 150px;
-  border-radius: 1%;
+  overflow: hidden;
+  float: left;
+  margin: 10px;
+}
+
+.project-img {
+  width: 100%;
+  object-fit: fill;
+  float: left;
+  z-index: 30;
 }

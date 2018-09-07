@@ -6,17 +6,21 @@
       <title class="center-text">{% block title %}{% endblock %} - My Site</title>
 
       <link rel="stylesheet" href="{% static 'base.css' %}">
+      <script type="text/javascript">console.log("Nice to meet you");</script>
       {% block head %}{% endblock %}
     </head>
     <body>
       {% block content %}{% endblock %}
     </body>
     <footer>
-      <ul class="buttons center-text">
-        <li><a href="https://www.instagram.com/feldman_alex/">Insta</a></li>
-        <li><a href="https://github.com/alex-fe">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/af3ld/">LinkedIn</a></li>
-        <li><a href="mailto:alexfeldman93@gmail.com">Contact</a></li>
-      </ul>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div class="buttons-container center-text">
+        <ul class="buttons-list">
+          <li><a class="fa fa-instagram" href="https://www.instagram.com/feldman_alex/"></a></li>
+          <li><a class="fa fa-github" href="https://github.com/alex-fe"></a></li>
+          <li><a class="fa fa-linkedin" href="https://www.linkedin.com/in/af3ld/"></a></li>
+          <li><a class="fa fa-envelope-o" href="mailto:alexfeldman93@gmail.com"></a></li>
+        </ul>
+      </div>
     </footer>
 </html>

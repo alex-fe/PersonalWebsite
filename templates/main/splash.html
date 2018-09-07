@@ -3,8 +3,6 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'splash.css' %}">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{% static 'splash.js' %}"></script>
 {% endblock %}
 {% block title %}ALEX{% endblock %}
 
@@ -21,8 +19,6 @@
             <div class="project-img-container">
               <img class="project-img" src={{catagory.image.url}} alt={{catagory.description}}>
             </div>
-            <h5 class="project-caption center-text">{{ catagory.name }}</h5>
-            <div class="project-shader"></div>
           </li>
         </a>
       {% endfor %}

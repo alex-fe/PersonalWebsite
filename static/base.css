@@ -37,22 +37,23 @@ li {
 }
 
 /*Footer*/
-.buttons {
+footer {
+  margin: 0 auto;
+}
+
+.buttons-container {
   position: fixed;
-  margin: 0;
   padding: 0;
   bottom: 0;
   margin-top:40px;
   width: 100%;
   background-color: white;
-  display: table;
+  overflow: hidden;
 }
 
-.buttons li{
-  display:inline;
-}
-
-.buttons li a{
-  display:inline-block;
-  padding:5px;
+.buttons {
+  width: 10px;
+  height: 10px;
+  object-fit: fill;
+  display: inline-block;
 }
