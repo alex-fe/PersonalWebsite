@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.utils import timezone
 
 from .models import Post, Tag
+from main.models import Catagory
 
 
 class PostListView(ListView):
@@ -12,11 +13,13 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        catagory = self.kwargs['catagory']
+        catagory = Catagory.objects.get(
+            name__iexact=self.kwargs['catagory'].replace('-', ' ')
+        )
         context.update({
             'now': timezone.now(),
             'catagory': catagory,
-            'posts': Post.objects.filter(catagory__name__iexact=catagory)
+            'posts': Post.objects.filter(catagory__name=catagory.name)
         })
         return context
 

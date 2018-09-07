@@ -12,17 +12,16 @@
   <div class="breadcrumb">
     <a href="{% url 'splash' %}">Main</a>
   </div>
+  <p>{{ catagory.detail|safe }}</p>
   <ul>
   {% for post in posts %}
-      <li>
-        <a href="{% url 'blog:detail' catagory|slugify post.pk %}">
-          <h3 class="center-text">{{ post.title }}</h3>
-          <h4 class="center-text">{{ post.created_date|date }}</h4>
-          <p>{{ post.text|blurb }}</p>
-        </a>
-      </li>
-  {% empty %}
-      <li>No posts yet.</li>
+    <li>
+      <a href="{% url 'blog:detail' catagory|slugify post.pk %}">
+        <h3 class="center-text">{{ post.title }}</h3>
+        <h4 class="center-text">{{ post.created_date|date }}</h4>
+        <p>{{ post.text|blurb }}</p>
+      </a>
+    </li>
   {% endfor %}
   </ul>
 {% endblock %}
