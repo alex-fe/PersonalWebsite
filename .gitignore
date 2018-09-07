@@ -1,4 +1,4 @@
-personal_site/personal_info.py
 *.pyc
 *.db
 media/
+*.sqlite3
