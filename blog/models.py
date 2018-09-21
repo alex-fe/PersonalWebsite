@@ -58,6 +58,9 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag)
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, null=True)
 
+    class Meta:
+        ordering = ('-created_date', )
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
