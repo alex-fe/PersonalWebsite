@@ -10,7 +10,9 @@
 {% block content %}
   <h1>{{ post.title }}</h1>
   <div class="breadcrumb">
-    <a href="{% url 'splash' %}">Main</a>.<a href="{% url 'blog:posts' catagory %}">{{ catagory|deslugify|title }}</a>
+    <a href="{% url 'splash' %}">Main</a>
+    <i class="fa fa-angle-double-right"></i>
+    <a href="{% url 'blog:posts' catagory %}">{{ catagory|deslugify|title }}</a>
   </div>
   <h3>{{ post.created_date|date }}</h3>
   <p>{{ post.body_html }}</p>
