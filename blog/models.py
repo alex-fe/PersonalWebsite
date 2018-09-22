@@ -1,4 +1,3 @@
-import os
 import markdown
 
 from django.conf import settings
@@ -6,7 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.html import mark_safe
 
-from main.models import Catagory
+from main.models import Catagory, get_image_path
 
 
 class Tag(models.Model):
@@ -21,10 +20,6 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
-
-
-def get_image_path(instance, filename):
-    return os.path.join(instance.name, 'posts', filename)
 
 
 def markdown_to_html(markdown_text, images):
