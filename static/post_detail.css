@@ -1,6 +1,10 @@
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
-  padding: 25px 50px 75px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .tags-list li {
