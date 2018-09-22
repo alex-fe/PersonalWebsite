@@ -11,16 +11,16 @@
   <div>
     <h1>ALEX FELDMAN</h1>
   </div>
-  <div class="project-list">
+  <div class="project-list center-text">
     <ul>
       {% for catagory in catagories %}
-        <a href="{% url 'blog:posts' catagory.name|slugify %}">
-          <li class="project-list-item center-text">
+        <li class="project-list-item center-text">
+          <a href="{% url 'blog:posts' catagory.name|slugify %}">
             <div class="project-img-container">
               <img class="project-img" src={{catagory.image.url}} alt={{catagory.name}}>
             </div>
-          </li>
-        </a>
+          </a>
+        </li>
       {% endfor %}
     </ul>
   </div>
