@@ -4,7 +4,7 @@
 {% block head %}
   <link rel="stylesheet" href="{% static 'splash.css' %}">
 {% endblock %}
-{% block title %}ALEX{% endblock %}
+{% block title %}Feldman.space{% endblock %}
 
 
 {% block content %}
@@ -15,7 +15,7 @@
     <ul>
       {% for catagory in catagories %}
         <li class="project-list-item center-text">
-          <a href="{% url 'blog:posts' catagory.name|slugify %}">
+          <a href="{% url 'blog:posts' catagory.name|slugify %}" title="{{catagory.name}}">
             <div class="project-img-container">
               <img class="project-img" src={{catagory.image.url}} alt={{catagory.name}}>
             </div>

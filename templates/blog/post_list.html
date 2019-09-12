@@ -5,7 +5,7 @@
 {% block head %}
   <link rel="stylesheet" href="{% static 'post_list.css' %}">
 {% endblock %}
-{% block title %}{{ catagory|upper|deslugify }}{% endblock %}
+{% block title %}Feldman.{{ catagory|lower|deslugify }}{% endblock %}
 
 {% block content %}
   <h1>{{ catagory|upper|deslugify }}</h1>
@@ -15,7 +15,7 @@
   <p>{{ catagory.detail|safe }}</p>
   <ul>
   {% for post in posts %}
-    <li>
+    <li class="post-item">
       <a href="{% url 'blog:detail' catagory|slugify post.pk %}">
         <h3>{{ post.title }}</h3>
         <h4>{{ post.created_date|date }}</h4>
