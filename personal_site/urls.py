@@ -10,7 +10,7 @@ from main.views import splash_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', splash_page,  name='splash'),
+    path('', splash_page, name='splash'),
     path('<slug:catagory>/', include(('blog.urls', 'blog'), namespace='blog')),
     path('tags/<slug:tag>/', TagListView.as_view(), name='tags'),
 ]
