@@ -13,13 +13,13 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = Path(__file__).parents[2]
+BASE_DIR = str(Path(__file__).parents[2])
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['ALEX_PERSONAL_SITE_KEY']
+SECRET_KEY = os.getenv('ALEX_PERSONAL_SITE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
