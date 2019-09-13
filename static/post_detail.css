@@ -12,6 +12,10 @@ p {
   overflow-wrap: break-word;
 }
 
+p > a:hover {
+  color: red;
+}
+
 .tags-list {
   padding-left: 0px;
 }
